@@ -35,6 +35,7 @@ import ninja.leaping.configurate.ConfigurationNode;
 public class DatabaseUtils {
 
     public static void getConnection(ConfigurationNode config) {
+<<<<<<< HEAD
         Connection mycon;
         mycon = null;
         /* This shows we have gotten the configuration variables we need to make a SQL connection from
@@ -47,6 +48,20 @@ public class DatabaseUtils {
         ConfigDatabase.getLogger().info("[ConfigDatabase/DB]: I got the following variables from my parent class: "+config.getChildrenMap());
 				
 				return;
+=======
+        Connection myCon = null;
+        
+        // This shows we have gotten the configuration variables we need to make a SQL connection from
+        // the main class. Note that we don't actually do anything to connect to the database here,
+        // and we don't want to return a null Connection, so this method has been made to return a void
+        // instead. If you want to actually attach a mysql DB, change the method to 
+        // public static Connection getConnection(ConfigurationNode config) above, and return "myCon"
+        // instead of just return.
+        
+        ConfigDatabase.getLogger().info("[ConfigDatabase/DB]: I got the following variables from my parent class: " + config.getChildrenMap());
+
+        return;
+>>>>>>> 407641747cd049661905b4bc2260612d094c7a2b
     }
 }
 
