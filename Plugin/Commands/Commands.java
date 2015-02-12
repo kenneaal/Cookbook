@@ -61,16 +61,16 @@ public class Commands {
 	public void onInitialization(InitializationEvent event) {
 		// These variables are often initialized in the PreInitialization phase. In this example,
 		// we initialize them here for brevity.
-		game = event.getGame();		
-		server = event.getGame().getServer();
+		this.game = event.getGame();		
+		this.server = event.getGame().getServer();
 		pluginContainer = game.getPluginManager().getPlugin(Commands.NAME);
-		logger=game.getPluginManager().getLogger(pluginContainer.get());
+		this.logger=game.getPluginManager().getLogger(pluginContainer.get());
 
 		getLogger().info("[Commands]: In InitializationEvent.");
 		// Get our instance of CommandDispatcher, and assign our callable command handler to a
 		// variable. Then register our command with the dispatcher.
 		CommandService cmdService = game.getCommandDispatcher();
-		cmdHandler = new Commandhandler();
+		this.cmdHandler = new Commandhandler();
 		getLogger().info("[Commands]: Calling register for command.");
 		// This command registers the command (and its aliases, if any). You can pass the aliases
 		// as either a list, or as individual strings. The first alias passed becomes the main
